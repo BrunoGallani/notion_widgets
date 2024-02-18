@@ -127,21 +127,21 @@
     <div class="wrapper">
 
       <!-- Start linkedin Icon -->
-      <div id="linkedin" onclick="navigate(this.id)" class="fill linkedin">
+      <div id="linkedin" onclick="navigate(this.id)" class="fill linkedin" title="https://www.linkedin.com/in/brunogallani/">
         <span class="icon"><i class="fab fa-linkedin"></i></span>
       </div>
       <!-- End linkedin Icon -->
 
       
       <!-- Start github Icon -->
-      <div id="github" onclick="navigate(this.id)" class="fill github">
+      <div id="github" onclick="navigate(this.id)" class="fill github" title="https://github.com/BrunoGallani/">
         <span class="icon"><i class="fab fa-github"></i></span>
       </div>
       <!-- End github Icon -->
 
       
       <!-- Start email Icon -->
-      <div id="email" onclick="navigate(this.id)" class="fill email">
+      <div id="email" onclick="navigate(this.id)" class="fill email" title="mailto:bruno2.galani@gmail.com">
         <span class="icon email"><i class="fa-solid fa-envelope"></i></span>
       </div>
       <!-- End email Icon -->
@@ -151,6 +151,14 @@
 
     
     <script>
+      document.querySelectorAll('.fill').forEach(item => {
+      item.addEventListener('click', event => {
+        if(event.button === 0 || event.button === 1) { // Verifica se o clique foi com o botão esquerdo (0) ou do meio (1)
+          navigate(item.id);
+        }
+      });
+    });
+      
       function navigate(id) {
 
         //if you want the URL to open in the same window use '_parent'  instead of '_blank'
