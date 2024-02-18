@@ -151,13 +151,6 @@
 
     
     <script>
-      document.querySelectorAll('.fill').forEach(item => {
-      item.addEventListener('click', event => {
-        if(event.button === 0 || event.button === 1) { // Verifica se o clique foi com o botão esquerdo (0) ou do meio (1)
-          navigate(item.id);
-        }
-      });
-    });
       
       function navigate(id) {
 
